@@ -1,20 +1,13 @@
 ---
 proxy-providers:
-  VVIP-IPTUNNELS-ID:
-    type: file
-    path: "./proxy_provider/vvip-id.yaml"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 180
-  VVIP-IPTUNNELS-SG:
+  IPTUNNELS:
     type: file
     path: "./proxy_provider/vvip-sg.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 180
-  VVIP-IPTUNNELS-GAME:
+  IPTUNNELS-GAME:
     type: file
     path: "./proxy_provider/vvip-game.yaml"
     health-check:
