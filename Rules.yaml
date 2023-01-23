@@ -85,6 +85,7 @@ rules:
 - RULE-SET,Rule_Personalads,AdBlock
 - RULE-SET,Rule_Porn,Porn
 - RULE-SET,Rule_Nsfw,Porn
+- RULE-SET,Rule_YouTube,YouTube
 - RULE-SET,Rule_Portgames,Game
 - RULE-SET,Rule_Gaming,Game
 - GEOSITE,WHATSAPP,DIRECT
