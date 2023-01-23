@@ -34,6 +34,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
     path: "./rule_basicads.yaml"
     interval: 86400
+  Rule_Games:
+    type: http
+    behavior: classical
+    path: "./rule_games.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_games.yaml
+    interval: 86400
   Rule_Gaming:
     type: http
     behavior: classical
@@ -74,6 +80,7 @@ rules:
 - RULE-SET,Rule_Personalads,AdBlock
 - RULE-SET,Rule_Porn,Porn
 - RULE-SET,Rule_Nsfw,Porn
+- RULE-SET,Rule_Games,Game
 - RULE-SET,Rule_Portgames,Game
 - RULE-SET,Rule_Gaming,Game
 - GEOSITE,WHATSAPP,DIRECT
