@@ -347,8 +347,6 @@ rules:
 - RULE-SET,rule_telegramcidr,TrafficSosmed
 - RULE-SET,rule_videoconferences,TrafficStreaming
 - RULE-SET,rule_portgames,TrafficPortGames
-- SCRIPT,TCPgames,TrafficPortGames
-- SCRIPT,UDPgames,TrafficPortGames
 - RULE-SET,rule_Gaming,TrafficGaming
 - RULE-SET,rule_games,TrafficGaming
 - RULE-SET,rule_discord,TrafficGaming
