@@ -7,114 +7,49 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 180
-  IPTUNNELS-GAME:
-    type: file
-    path: "./proxy_provider/game.yaml"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 180
 proxy-groups:
-- name: Route VVIP ID
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  use:
-  - VVIP-IPTUNNELS-ID
-  url: http://www.gstatic.com/generate_204
-  interval: 360
-- name: Route VVIP SG
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  use:
-  - VVIP-IPTUNNELS-SG
-  url: http://www.gstatic.com/generate_204
-  interval: 360
-- name: Route VVIP GAME
-  type: url-test
-  disable-udp: false
-  use:
-  - VVIP-IPTUNNELS-GAME
-  url: http://www.gstatic.com/generate_204
-  interval: 600
-- name: TrafficDirect
+- name: VPN
   type: select
   disable-udp: false
   proxies:
-  - Direct Multi-WAN
-  - Route VVIP ID
-  - Route VVIP SG
-- name: Direct Multi-WAN
-  type: select
-  disable-udp: false
-  proxies:
-  - Direct WAN A
-  - Direct WAN B
-  - Direct WAN C
-- name: Direct WAN A
-  type: select
-  disable-udp: false
-  interface-name: eth1
-  proxies:
-  - DIRECT
-- name: Direct WAN B
-  type: select
-  disable-udp: false
-  interface-name: wlan0
-  proxies:
-  - DIRECT
-- name: Direct WAN C
-  type: select
-  disable-udp: false
-  interface-name: eth2
-  proxies:
-  - DIRECT
+  - DIRCT
+  - VPN
 - name: TrafficPortGames
   type: select
   disable-udp: false
   proxies:
   - TrafficDirect
-  - Route VVIP GAME
+  - VPN
 - name: TrafficGaming
   type: select
   disable-udp: false
   proxies:
-  - Route VVIP GAME
+  - VPN
   - TrafficDirect
-  use:
-  - VVIP-IPTUNNELS-GAME
 - name: TrafficAds
   type: select
   disable-udp: false
   proxies:
   - REJECT
-  - Route VVIP SG
-  - Route VVIP ID
+  - VPN
 - name: TrafficPorn
   type: select
   disable-udp: false
   proxies:
   - REJECT
-  - Route VVIP SG
-  - Route VVIP ID
+  - VPN
 - name: TrafficUmum
   type: fallback
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP SG
-  - Route VVIP ID
-  - Direct Multi-WAN
-  url: http://www.gstatic.com/generate_204
-  interval: '30'
+  - VPN
 - name: TrafficIndo
   type: fallback
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP ID
-  - Route VVIP SG
+  - VPN
   - TrafficDirect
   url: http://www.gstatic.com/generate_204
   interval: '30'
@@ -123,9 +58,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP SG
-  - Route VVIP ID
-  - Direct Multi-WAN
+  - VPN
+  - Direct
   url: http://www.gstatic.com/generate_204
   interval: '30'
 - name: TrafficSosmed
@@ -133,9 +67,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP ID
-  - Route VVIP SG
-  - Direct Multi-WAN
+  - VPN
+  - Direct
   url: http://www.gstatic.com/generate_204
   interval: '30'
 redir-port: 7892
