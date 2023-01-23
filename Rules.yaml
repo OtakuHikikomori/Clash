@@ -69,7 +69,8 @@ rule-providers:
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_nsfw.yaml
     path: "./rule_nsfw.yaml"
     interval: 86400
-  Rule_Nsfw:
+  Rule_YouTube
+:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_youtube.yaml
