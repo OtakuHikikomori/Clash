@@ -1,91 +1,100 @@
-proxies:
+rule-providers:
+  Direct:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/direct.yaml
+    path: "./direct.yaml"
+    interval: 86400
+  Reject:
+    type: http
+    behavior: classical
+    path: "./reject.yaml"
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/reject.yaml
+    interval: 86400
+  Basicads:
+    type: http
+    behavior: classical
+    path: "./basicads.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
+    interval: 86400
+  Gaming:
+    type: http
+    behavior: classical
+    path: "./gaming.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_gaming.yaml
+    interval: 86400
+  Portgames:
+    type: http
+    behavior: classical
+    path: "./portgames.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_portgames.yaml
+    interval: 86400
+  Personalads:
+    type: http
+    behavior: classical
+    path: "./personalads.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml
+    interval: 86400
+  18+:
+    type: http
+    behavior: domain
+    path: "./18+.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_porn.yaml
+    interval: 86400
+  Nsfw:
+    type: http
+    behavior: classical
+    path: "./nsfw.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_nsfw.yaml
+    interval: 86400
 proxy-providers:
- Akun-VPN:
+  Akun:
     type: file
     path: "./vpn.yaml"
     health-check:
       enable: true
-      url: http://howdy.id/ping.php
+      url: http://www.gstatic.com/generate_204
       interval: 300
 proxy-groups:
 - name: VPN
-  type: select
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
   use:
-  - Akun-VPN
+  - Akun
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
 - name: AdBlock
   type: select
+  disable-udp: false
   proxies:
   - VPN
   - REJECT
 - name: Game
   type: select
+  disable-udp: false
   proxies:
-  - DIRECT
   - VPN
-- name: Porn
+  - DIRECT
+- name: 18+
   type: select
+  disable-udp: false
   proxies:
   - VPN
   - REJECT
-rule-providers:
-  Rule_AdBlock:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml
-    path: "./rule_basicads.yaml"
-    interval: 86400
-  Rule_Games:
-    type: http
-    behavior: domain
-    path: "./rule_games.yaml"
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_games.yaml
-    interval: 86400
-  Rule_Gaming:
-    type: http
-    behavior: classical
-    path: "./rule_gaming.yaml"
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_gaming.yaml
-    interval: 86400
-  Rule_Portgames:
-    type: http
-    behavior: classical
-    path: "./rule_portgames.yaml"
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_portgames.yaml
-    interval: 86400
-  Rule_Personalads:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml
-    path: "./rule_personalads.yaml"
-    interval: 86400
-  Rule_Porn:
-    type: http
-    behavior: domain
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_porn.yaml
-    path: "./rule_porn.yaml"
-    interval: 86400
-  Rule_Nsfw:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_nsfw.yaml
-    path: "./rule_nsfw.yaml"
-    interval: 86400
 script:
   shortcuts:
     TCPgames: network == 'tcp' and dst_port not in [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8883, 8888, 8889]
     UDPgames: network == 'udp' and dst_port not in [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8883, 8888, 8889]
 rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- RULE-SET,Rule_AdBlock,AdBlock
-- RULE-SET,Rule_Personalads,AdBlock
-- RULE-SET,Rule_Porn,Porn
-- RULE-SET,Rule_Nsfw,Porn
-- RULE-SET,Rule_Games,Game
-- RULE-SET,Rule_Portgames,Game
-- RULE-SET,Rule_Gaming,Game
-- GEOSITE,WHATSAPP,DIRECT
-- GEOSITE,LINE,DIRECT
-- GEOSITE,YOUTUBE,DIRECT
-- GEOSITE,FACEBOOK,DIRECT
-- GEOSITE,INSTAGRAM,DIRECT
+- DOMAIN-SUFFIX,googlesyndication.com,VPN
+- RULE-SET,Personalads,AdBlock
+- RULE-SET,Basicads,AdBlock
+- RULE-SET,Gaming,Game
+- RULE-SET,Portgames,Game
+- RULE-SET,18+,18+
+- RULE-SET,Nsfw,18+
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Reject,REJECT
 - MATCH,VPN
