@@ -246,7 +246,6 @@ rules:
 - RULE-SET,rule_basicads,AdBlock
 - RULE-SET,rule_privacy,AdBlock
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
-- RULE-SET,rule_Direct,DIRECT,no-resolve
 - RULE-SET,rule_Streaming,Streaming
 - RULE-SET,rule_hbo,Streaming
 - RULE-SET,rule_iqiyi,Streaming
@@ -273,11 +272,7 @@ tun:
   - tcp://8.8.4.4:53
 tproxy-port: 7895
 rule-providers:
-  rule_Direct:
-    type: file
-    behavior: classical
-    path: "./rule_direct.yaml"
-  rule_portgames:
+    rule_portgames:
     type: http
     behavior: classical
     path: "./rule_portgames.yaml"
