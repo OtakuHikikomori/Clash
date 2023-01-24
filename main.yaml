@@ -241,22 +241,6 @@ profile:
   store-fake-ip: true
 rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- PROCESS-NAME,v2ray,DIRECT
-- PROCESS-NAME,xray,DIRECT
-- PROCESS-NAME,naive,DIRECT
-- PROCESS-NAME,trojan,DIRECT
-- PROCESS-NAME,trojan-go,DIRECT
-- PROCESS-NAME,ss-local,DIRECT
-- PROCESS-NAME,privoxy,DIRECT
-- PROCESS-NAME,leaf,DIRECT
-- PROCESS-NAME,v2ray.exe,DIRECT
-- PROCESS-NAME,xray.exe,DIRECT
-- PROCESS-NAME,naive.exe,DIRECT
-- PROCESS-NAME,trojan.exe,DIRECT
-- PROCESS-NAME,trojan-go.exe,DIRECT
-- PROCESS-NAME,ss-local.exe,DIRECT
-- PROCESS-NAME,privoxy.exe,DIRECT
-- DST-PORT,22,DIRECT,no-resolve
 - RULE-SET,Rule_Personalads,AdBlock
 - RULE-SET,rule_reject,AdBlock
 - RULE-SET,rule_basicads,AdBlock
