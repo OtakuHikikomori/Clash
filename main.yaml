@@ -24,8 +24,8 @@ proxy-groups:
 - name: AdBlock
   type: select
   proxies:
-  - REJECT
   - VPN
+  - REJECT
   strategy: consistent-hashing
   disable-udp: false
   use:
