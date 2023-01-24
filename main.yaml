@@ -257,7 +257,7 @@ rules:
 - PROCESS-NAME,ss-local.exe,DIRECT
 - PROCESS-NAME,privoxy.exe,DIRECT
 - DST-PORT,22,DIRECT,no-resolve
-- RULE-SET,rule_BlockAds,AdBlock
+- RULE-SET,Rule_AdBlock,AdBlock
 - RULE-SET,rule_personalads.yaml,AdBlock
 - RULE-SET,rule_basicads,AdBlock
 - RULE-SET,rule_privacy,AdBlock
@@ -332,7 +332,7 @@ rule-providers:
   Rule_AdBlock:
     type: http
     behavior: classical
-    path: "./rule_basicads.yaml"
+    path: "./Rule_AdBlock"
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
     interval: 86400
   rule_reject:
