@@ -258,7 +258,7 @@ rules:
 - PROCESS-NAME,privoxy.exe,DIRECT
 - DST-PORT,22,DIRECT,no-resolve
 - RULE-SET,rule_BlockAds,AdBlock
-- RULE-SET,rule_reject,AdBlock
+- RULE-SET,rule_personalads.yaml,AdBlock
 - RULE-SET,rule_basicads,AdBlock
 - RULE-SET,rule_privacy,AdBlock
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
@@ -329,17 +329,17 @@ rule-providers:
     url: https://rules.kr328.app/discord.yaml
     path: "./rule_discord.yaml"
     interval: 86400
-  rule_BlockAds:
+  Rule_AdBlock:
     type: http
     behavior: classical
-    path: "./rule_BlockAds.yaml"
+    path: "./rule_basicads.yaml"
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
     interval: 86400
   rule_reject:
     type: http
     behavior: domain
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
-    path: "./rule_reject.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml
+    path: "./rule_personalads.yaml"
     interval: 86400
   rule_privacy:
     type: http
