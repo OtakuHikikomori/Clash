@@ -12,16 +12,16 @@ proxy-groups:
   type: select
   use:
   - Akun-VPN
-- name: Game
-  type: select
-  proxies:
-  - DIRECT
-  - VPN
 - name: AdBlock
   type: select
   proxies:
   - VPN
   - REJECT
+- name: Game
+  type: select
+  proxies:
+  - DIRECT
+  - VPN
 - name: Porn
   type: select
   proxies:
