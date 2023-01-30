@@ -1,6 +1,6 @@
 proxy-providers:
   Umum:
-    type: http
+    type: htt
     path: "./Proxy Provider/umum.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/umum.yaml
     health-check:
