@@ -1,6 +1,5 @@
 proxies:
 #isi akun tunnel
-
 - name: "VMESS-WS"
   type: vmess
   server: 104.16.51.111
