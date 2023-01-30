@@ -3,7 +3,7 @@ proxy-providers:
     type: http
     behavior: classical
     path: "./umum.yaml"
-    url: https://fool.azurewebsites.net/get?vpn=vmess&format=clash&cc=SG&cdn=104.16.51.111
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/umum.yaml
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -12,7 +12,7 @@ proxy-providers:
     type: http
     behavior: classical
     path: "./gaming.yaml"
-    url: https://fool.azurewebsites.net/get?vpn=vmess&format=clash&cc=SG&cdn=104.16.51.111
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/gaming.yaml
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -21,7 +21,7 @@ proxy-providers:
     type: http
     behavior: classical
     path: "./sosmed.yaml"
-    url: https://fool.azurewebsites.net/get?vpn=vmess&format=clash&cc=SG&cdn=104.16.51.111
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/sosmed.yaml
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -30,7 +30,7 @@ proxy-providers:
     type: http
     behavior: classical
     path: "./streaming.yaml"
-    url: https://fool.azurewebsites.net/get?vpn=vmess&format=clash&cc=SG&cdn=104.16.51.111
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/streaming.yaml
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
