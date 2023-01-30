@@ -329,9 +329,11 @@ tun:
 tproxy-port: 7895
 rule-providers:
   rule_Direct:
-    type: file
+    type: http
     behavior: classical
-    path: "./rule_direct.yaml"
+    path: "./Rule Provider/rule_direct.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_direct.yaml
+    interval: 86400
   rule_portgames:
     type: http
     behavior: classical
