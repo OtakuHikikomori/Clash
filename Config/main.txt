@@ -8,7 +8,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
   Gaming:
-    type: file
+    type: http
     path: "./Proxy Provider/gaming.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/gaming.yaml
     health-check:
@@ -16,7 +16,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
   Sosmed:
-    type: file
+    type: http
     path: "./Proxy Provider/sosmed.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/sosmed.yaml
     health-check:
@@ -24,7 +24,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
   Streaming:
-    type: file
+    type: http
     path: "./Proxy Provider/streaming.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/streaming.yaml
     health-check:
@@ -32,7 +32,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
   trafficIndo:
-    type: file
+    type: http
     path: "./Proxy Provider/trafficIndo.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/trafficIndo.yaml
     health-check:
