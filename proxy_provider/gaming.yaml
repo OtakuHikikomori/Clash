@@ -2,7 +2,7 @@ proxies:
 #isi akun tunnel
 - name: "VMESS-WS"
   type: vmess
-  server: 104.21.235.171
+  server: 104.16.51.111
   port: 443
   uuid: 96d21e42-20be-4f6f-862f-f35a30ced505
   alterId: 0
