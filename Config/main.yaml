@@ -57,13 +57,13 @@ proxy-groups:
   proxies:
   - Route VVIP ID
   - Route VVIP SG
-- name: TrafficPortGames
+- name: PortGames
   type: select
   disable-udp: false
   proxies:
   - TrafficDirect
   - Route VVIP GAME
-- name: TrafficGaming
+- name: Gaming
   type: select
   disable-udp: false
   proxies:
@@ -71,21 +71,21 @@ proxy-groups:
   - TrafficDirect
   use:
   - VVIP-IPTUNNELS-GAME
-- name: TrafficAds
+- name: ADS
   type: select
   disable-udp: false
   proxies:
   - REJECT
   - Route VVIP SG
   - Route VVIP ID
-- name: TrafficPorn
+- name: Porn
   type: select
   disable-udp: false
   proxies:
   - REJECT
   - Route VVIP SG
   - Route VVIP ID
-- name: TrafficUmum
+- name: Umum
   type: fallback
   lazy: true
   disable-udp: false
@@ -104,7 +104,7 @@ proxy-groups:
   - TrafficDirect
   url: http://www.gstatic.com/generate_204
   interval: '30'
-- name: TrafficStreaming
+- name: Streaming
   type: fallback
   lazy: true
   disable-udp: false
@@ -113,7 +113,7 @@ proxy-groups:
   - Route VVIP ID
   url: http://www.gstatic.com/generate_204
   interval: '30'
-- name: TrafficSosmed
+- name: Sosmed
   type: fallback
   lazy: true
   disable-udp: false
@@ -305,18 +305,18 @@ rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - DST-PORT,22,TrafficDirect
 - RULE-SET,rule_lancidr,DIRECT,no-resolve
-- RULE-SET,rule_falsepositive,TrafficUmum
+- RULE-SET,rule_falsepositive,Umum
 - RULE-SET,rule_malicious,REJECT
 - RULE-SET,rule_maliciousip,REJECT
-- RULE-SET,rule_personalads,TrafficAds
-- RULE-SET,rule_basicads,TrafficAds
-- RULE-SET,rule_hijacking,TrafficAds
-- RULE-SET,rule_privacy,TrafficAds
-- RULE-SET,rule_porn,TrafficPorn
-- RULE-SET,rule_nsfw,TrafficPorn
+- RULE-SET,rule_personalads,ADS
+- RULE-SET,rule_basicads,ADS
+- RULE-SET,rule_hijacking,ADS
+- RULE-SET,rule_privacy,ADS
+- RULE-SET,rule_porn,Porn
+- RULE-SET,rule_nsfw,Porn
 - RULE-SET,rule_Direct,TrafficDirect
-# - SCRIPT,speedtest,TrafficUmum
-- RULE-SET,rule_playstore,TrafficUmum
+# - SCRIPT,speedtest,Umum
+- RULE-SET,rule_playstore,Umum
 - RULE-SET,rule_disneyplus,TrafficIndo
 - RULE-SET,rule_netflix,TrafficIndo
 - RULE-SET,rule_Indo,TrafficIndo
@@ -324,27 +324,27 @@ rules:
 - RULE-SET,rule_hboasia,TrafficIndo
 - RULE-SET,rule_hbohk,TrafficIndo
 - RULE-SET,rule_hbousa,TrafficIndo
-- RULE-SET,rule_Streaming,TrafficStreaming
-- RULE-SET,rule_iqiyi,TrafficStreaming
-- RULE-SET,rule_iqiyiinter,TrafficStreaming
-- RULE-SET,rule_primevideo,TrafficStreaming
-- RULE-SET,rule_twitch,TrafficStreaming
-- RULE-SET,rule_Youtube,TrafficStreaming
-- RULE-SET,rule_Sosmed,TrafficSosmed
-- RULE-SET,rule_line,TrafficSosmed
-- RULE-SET,rule_metaverse,TrafficSosmed
-- RULE-SET,rule_tiktok,TrafficSosmed
-- RULE-SET,rule_twitter,TrafficSosmed
-- RULE-SET,rule_telegram,TrafficSosmed
-- RULE-SET,rule_telegramcidr,TrafficSosmed
-- RULE-SET,rule_videoconferences,TrafficStreaming
-- RULE-SET,rule_portgames,TrafficPortGames
-# - SCRIPT,TCPgames,TrafficPortGames
-# - SCRIPT,UDPgames,TrafficPortGames
-- RULE-SET,rule_Gaming,TrafficGaming
-- RULE-SET,rule_games,TrafficGaming
-- RULE-SET,rule_discord,TrafficGaming
-- RULE-SET,rule_umum,TrafficUmum
+- RULE-SET,rule_Streaming,Streaming
+- RULE-SET,rule_iqiyi,Streaming
+- RULE-SET,rule_iqiyiinter,Streaming
+- RULE-SET,rule_primevideo,Streaming
+- RULE-SET,rule_twitch,Streaming
+- RULE-SET,rule_Youtube,Streaming
+- RULE-SET,rule_Sosmed,Sosmed
+- RULE-SET,rule_line,Sosmed
+- RULE-SET,rule_metaverse,Sosmed
+- RULE-SET,rule_tiktok,Sosmed
+- RULE-SET,rule_twitter,Sosmed
+- RULE-SET,rule_telegram,Sosmed
+- RULE-SET,rule_telegramcidr,Sosmed
+- RULE-SET,rule_videoconferences,Streaming
+- RULE-SET,rule_portgames,PortGames
+# - SCRIPT,TCPgames,PortGames
+# - SCRIPT,UDPgames,PortGames
+- RULE-SET,rule_Gaming,Gaming
+- RULE-SET,rule_games,Gaming
+- RULE-SET,rule_discord,Gaming
+- RULE-SET,rule_umum,Umum
 - MATCH,GLOBAL
 tun:
   enable: true
