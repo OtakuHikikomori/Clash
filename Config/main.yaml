@@ -333,6 +333,8 @@ rule-providers:
     type: http
     behavior: classical
     path: "./Rule Provider/rule_direct.yaml"
+    url: https://raw.githubusercontent.com/malikshi/open_for_android/main/rule_provider/rule_direct.yaml
+    interval: 86400
   rule_portgames:
     type: http
     behavior: classical
