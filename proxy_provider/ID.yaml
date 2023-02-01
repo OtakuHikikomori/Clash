@@ -18,3 +18,114 @@ proxies:
       max-early-data: 2048
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
+
+  - name: 61 🇸🇬 G-Core Labs S.A. WS CDN TLS
+    server: 104.16.51.111
+    type: vmess
+    port: 443
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    udp: true
+    skip-cert-verify: true
+    network: ws
+    servername: sg-gcore.sharecentre.online
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: sg-gcore.sharecentre.online
+  - name: 106 🇸🇬 Akamai Technologies  Inc. GRPC CDN TLS
+    server: 104.16.51.111
+    type: vmess
+    port: 443
+    uuid: c5113ef7-5f92-49a7-8139-ca73eb786e65
+    alterId: 0
+    cipher: auto
+    tls: true
+    udp: true
+    skip-cert-verify: true
+    network: grpc
+    servername: sg2.ftvpn.net
+    grpc-opts:
+      grpc-service-name: 'vmess-grpc'
+  - name: 132 🇸🇬 Akamai Technologies  Inc. WS CDN TLS
+    server: 104.16.51.111
+    type: vmess
+    port: 443
+    uuid: c5113ef7-5f92-49a7-8139-ca73eb786e65
+    alterId: 0
+    cipher: auto
+    tls: true
+    udp: true
+    skip-cert-verify: true
+    network: ws
+    servername: sg2.ftvpn.net
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg2.ftvpn.net
+  - name: 168 🇸🇬 DIGITALOCEAN-ASN WS CDN TLS
+    server: 104.16.51.111
+    type: vmess
+    port: 443
+    uuid: b3e65eaa-cef5-4290-8808-b3a6ddefbfd6
+    alterId: 0
+    cipher: auto
+    tls: true
+    udp: true
+    skip-cert-verify: true
+    network: ws
+    servername: xray.ayanokouji.my.id
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: xray.ayanokouji.my.id
+  - name: 283 🇸🇬 ORACLE-BMC-31898 WS CDN TLS
+    server: 104.16.51.111
+    type: vmess
+    port: 443
+    uuid: 82d5ea73-8002-4319-cd3c-29d1560bd290
+    alterId: 0
+    cipher: auto
+    tls: true
+    udp: true
+    skip-cert-verify: true
+    network: ws
+    servername: xjp4h.mayaa.ml
+    ws-opts:
+      path: /dsadsa1dsadsa33434
+      headers:
+        Host: xjp4h.mayaa.ml
+  - name: 291 🇸🇬 Contabo Asia Private Limited WS CDN NTLS
+    server: 104.16.51.111
+    type: vmess
+    port: 80
+    uuid: fc35ff9d-e0ee-4260-8a8a-51028714474e
+    alterId: 0
+    cipher: auto
+    tls: false
+    udp: true
+    skip-cert-verify: true
+    network: ws
+    servername: sg2-ctb.v2rayserv.com
+    ws-opts:
+      path: /
+      headers:
+        Host: sg2-ctb.v2rayserv.com
+  - name: 295 🇸🇬 Contabo Asia Private Limited WS CDN TLS
+    server: 104.16.51.111
+    type: vmess
+    port: 443
+    uuid: 0baaf014-af04-4028-be53-f5c75bb276ae
+    alterId: 0
+    cipher: auto
+    tls: true
+    udp: true
+    skip-cert-verify: true
+    network: ws
+    servername: sg-v.sshmax.xyz
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg-v.sshmax.xyz
