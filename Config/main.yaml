@@ -1,45 +1,45 @@
 proxy-providers:
   Umum:
     type: http
-    behavior: classical
-    path: "./Proxy Provider/umum.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/umum.yaml
+    interval: 86400
+    path: "./Proxy Provider/umum.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   Gaming:
     type: http
-    behavior: classical
-    path: "./Proxy Provider/gaming.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/gaming.yaml
+    interval: 86400
+    path: "./Proxy Provider/gaming.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   Sosmed:
     type: http
-    behavior: classical
-    path: "./Proxy Provider/sosmed.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/sosmed.yaml
+    interval: 86400
+    path: "./Proxy Provider/sosmed.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   Streaming:
     type: http
-    behavior: classical
-    path: "./Proxy Provider/streaming.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/streaming.yaml
+    interval: 86400
+    path: "./Proxy Provider/streaming.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
   trafficIndo:
     type: http
-    behavior: classical
-    path: "./Proxy Provider/trafficIndo.yaml"
     url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/trafficIndo.yaml
+    interval: 86400
+    path: "./Proxy Provider/trafficIndo.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
