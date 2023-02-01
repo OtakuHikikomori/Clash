@@ -28,7 +28,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 180
 proxy-groups:
-- name: Route VVIP ID
+- name: Route ID
   type: load-balance
   strategy: round-robin
   disable-udp: false
@@ -36,7 +36,7 @@ proxy-groups:
   - VVIP-IPTUNNELS-ID
   url: http://www.gstatic.com/generate_204
   interval: 360
-- name: Route VVIP SG
+- name: Route SG
   type: load-balance
   strategy: round-robin
   disable-udp: false
@@ -44,7 +44,7 @@ proxy-groups:
   - VVIP-IPTUNNELS-SG
   url: http://www.gstatic.com/generate_204
   interval: 360
-- name: Route VVIP GAME
+- name: Route GAME
   type: url-test
   disable-udp: false
   use:
@@ -55,19 +55,19 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Route VVIP ID
-  - Route VVIP SG
+  - Route ID
+  - Route SG
 - name: PortGames
   type: select
   disable-udp: false
   proxies:
   - TrafficDirect
-  - Route VVIP GAME
+  - Route GAME
 - name: Gaming
   type: select
   disable-udp: false
   proxies:
-  - Route VVIP GAME
+  - Route GAME
   - TrafficDirect
   use:
   - VVIP-IPTUNNELS-GAME
@@ -76,22 +76,22 @@ proxy-groups:
   disable-udp: false
   proxies:
   - REJECT
-  - Route VVIP SG
-  - Route VVIP ID
+  - Route SG
+  - Route ID
 - name: Porn
   type: select
   disable-udp: false
   proxies:
   - REJECT
-  - Route VVIP SG
-  - Route VVIP ID
+  - Route SG
+  - Route ID
 - name: Umum
   type: fallback
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP SG
-  - Route VVIP ID
+  - Route SG
+  - Route ID
   url: http://www.gstatic.com/generate_204
   interval: '30'
 - name: TrafficIndo
@@ -99,8 +99,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP ID
-  - Route VVIP SG
+  - Route ID
+  - Route SG
   - TrafficDirect
   url: http://www.gstatic.com/generate_204
   interval: '30'
@@ -109,8 +109,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP SG
-  - Route VVIP ID
+  - Route SG
+  - Route ID
   url: http://www.gstatic.com/generate_204
   interval: '30'
 - name: Sosmed
@@ -118,8 +118,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route VVIP ID
-  - Route VVIP SG
+  - Route ID
+  - Route SG
   url: http://www.gstatic.com/generate_204
   interval: '30'
 redir-port: 7892
