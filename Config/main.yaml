@@ -57,24 +57,10 @@ proxy-groups:
   disable-udp: false
   proxies:
   - Direct WAN A
-  - Direct WAN B
-  - Direct WAN C
 - name: Direct WAN A
   type: select
   disable-udp: false
   interface-name: eth1
-  proxies:
-  - DIRECT
-- name: Direct WAN B
-  type: select
-  disable-udp: false
-  interface-name: wlan0
-  proxies:
-  - DIRECT
-- name: Direct WAN C
-  type: select
-  disable-udp: false
-  interface-name: eth2
   proxies:
   - DIRECT
 - name: TrafficPortGames
