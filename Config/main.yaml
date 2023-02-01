@@ -28,7 +28,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 180
 proxy-groups:
-- name: Route ID
+- name: ID
   type: load-balance
   strategy: round-robin
   disable-udp: false
@@ -36,7 +36,7 @@ proxy-groups:
   - VVIP-IPTUNNELS-ID
   url: http://www.gstatic.com/generate_204
   interval: 360
-- name: Route SG
+- name: SG
   type: load-balance
   strategy: round-robin
   disable-udp: false
@@ -44,7 +44,7 @@ proxy-groups:
   - VVIP-IPTUNNELS-SG
   url: http://www.gstatic.com/generate_204
   interval: 360
-- name: Route GAME
+- name: GAME
   type: url-test
   disable-udp: false
   use:
@@ -55,19 +55,19 @@ proxy-groups:
   type: select
   disable-udp: false
   proxies:
-  - Route ID
-  - Route SG
+  - ID
+  - SG
 - name: PortGames
   type: select
   disable-udp: false
   proxies:
   - TrafficDirect
-  - Route GAME
+  - GAME
 - name: Gaming
   type: select
   disable-udp: false
   proxies:
-  - Route GAME
+  - GAME
   - TrafficDirect
   use:
   - VVIP-IPTUNNELS-GAME
@@ -76,22 +76,22 @@ proxy-groups:
   disable-udp: false
   proxies:
   - REJECT
-  - Route SG
-  - Route ID
+  - SG
+  - ID
 - name: Porn
   type: select
   disable-udp: false
   proxies:
   - REJECT
-  - Route SG
-  - Route ID
+  - SG
+  - ID
 - name: Umum
   type: fallback
   lazy: true
   disable-udp: false
   proxies:
-  - Route SG
-  - Route ID
+  - SG
+  - ID
   url: http://www.gstatic.com/generate_204
   interval: '30'
 - name: TrafficIndo
@@ -99,8 +99,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route ID
-  - Route SG
+  - ID
+  - SG
   - TrafficDirect
   url: http://www.gstatic.com/generate_204
   interval: '30'
@@ -109,8 +109,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route SG
-  - Route ID
+  - SG
+  - ID
   url: http://www.gstatic.com/generate_204
   interval: '30'
 - name: Sosmed
@@ -118,8 +118,8 @@ proxy-groups:
   lazy: true
   disable-udp: false
   proxies:
-  - Route ID
-  - Route SG
+  - ID
+  - SG
   url: http://www.gstatic.com/generate_204
   interval: '30'
 redir-port: 7892
