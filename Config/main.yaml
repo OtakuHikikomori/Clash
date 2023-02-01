@@ -3,7 +3,7 @@ proxy-providers:
   VVIP-IPTUNNELS-ID:
     type: http
     path: "./proxy_provider/vvip-id.yaml"
-    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/umum.yaml
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/ID.yaml
     interval: 86400
     health-check:
       enable: true
@@ -12,7 +12,7 @@ proxy-providers:
   VVIP-IPTUNNELS-SG:
     type: http
     path: "./proxy_provider/vvip-sg.yaml"
-    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/umum.yaml
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/SG.yaml
     interval: 86400
     health-check:
       enable: true
@@ -21,7 +21,7 @@ proxy-providers:
   VVIP-IPTUNNELS-GAME:
     type: http
     path: "./proxy_provider/vvip-game.yaml"
-    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/umum.yaml
+    url: https://raw.githubusercontent.com/mfathul799/Clash/main/proxy_provider/GAME.yaml
     interval: 86400
     health-check:
       enable: true
