@@ -57,24 +57,10 @@ proxy-groups:
   disable-udp: false
   proxies:
   - Direct WAN A
-  - Direct WAN B
-  - Direct WAN C
 - name: Direct WAN A
   type: select
   disable-udp: false
   interface-name: eth1
-  proxies:
-  - DIRECT
-- name: Direct WAN B
-  type: select
-  disable-udp: false
-  interface-name: wlan0
-  proxies:
-  - DIRECT
-- name: Direct WAN C
-  type: select
-  disable-udp: false
-  interface-name: eth2
   proxies:
   - DIRECT
 - name: TrafficPortGames
@@ -338,7 +324,7 @@ rules:
 - RULE-SET,rule_porn,TrafficPorn
 - RULE-SET,rule_nsfw,TrafficPorn
 - RULE-SET,rule_Direct,TrafficDirect
-- SCRIPT,speedtest,TrafficUmum
+# - SCRIPT,speedtest,TrafficUmum
 - RULE-SET,rule_playstore,TrafficUmum
 - RULE-SET,rule_disneyplus,TrafficIndo
 - RULE-SET,rule_netflix,TrafficIndo
@@ -362,8 +348,8 @@ rules:
 - RULE-SET,rule_telegramcidr,TrafficSosmed
 - RULE-SET,rule_videoconferences,TrafficStreaming
 - RULE-SET,rule_portgames,TrafficPortGames
-- SCRIPT,TCPgames,TrafficPortGames
-- SCRIPT,UDPgames,TrafficPortGames
+# - SCRIPT,TCPgames,TrafficPortGames
+# - SCRIPT,UDPgames,TrafficPortGames
 - RULE-SET,rule_Gaming,TrafficGaming
 - RULE-SET,rule_games,TrafficGaming
 - RULE-SET,rule_discord,TrafficGaming
