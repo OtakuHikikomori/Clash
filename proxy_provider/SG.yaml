@@ -2,7 +2,7 @@ proxies:
 #isi akun tunnel
 - name: "VMESS WEEKLY"
   type: vmess
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   uuid: 96d21e42-20be-4f6f-862f-f35a30ced505
   alterId: 0
@@ -19,7 +19,7 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
 - name: "TROJAN-WEEKLY"
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   type: trojan
   password: dc6480b0-a442-11ed-a707-1239d0255272
@@ -35,7 +35,7 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
 - name: "SG-HE"
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   type: trojan
   password: 65559e80-a443-11ed-bf60-1239d0255272
@@ -51,7 +51,7 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
 - name: "SG-HE-MUX"
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   type: trojan
   password: cc680040-a44a-11ed-84a2-1239d0255272
@@ -67,7 +67,7 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
 - name: "SG-AMP"
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   type: trojan
   password: 18534f30-a446-11ed-9ffd-1239d0255272
@@ -83,7 +83,7 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
 - name: "SG-OVH"
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   type: trojan
   password: 34186b40-a444-11ed-a170-1239d0255272
