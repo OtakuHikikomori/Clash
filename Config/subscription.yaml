@@ -3,7 +3,7 @@ proxy-providers:
   Indonesia:
     type: http
     path: "./proxy_provider/vvip-id.yaml"
-    url: https://fool.azurewebsites.net/get?format=clash&region=Asia&cdn=104.16.51.111
+    url: https://fool.azurewebsites.net/get?format=clash&region=Asia&cdn=104.21.235.171
     interval: 86400
     health-check:
       enable: true
@@ -12,7 +12,7 @@ proxy-providers:
   Singapore:
     type: http
     path: "./proxy_provider/vvip-sg.yaml"
-    url: https://fool.azurewebsites.net/get?format=clash&region=Asia&cdn=104.16.51.111
+    url: https://fool.azurewebsites.net/get?format=clash&region=Asia&cdn=104.21.235.171
     interval: 86400
     health-check:
       enable: true
@@ -21,7 +21,7 @@ proxy-providers:
   GAME:
     type: http
     path: "./proxy_provider/vvip-game.yaml"
-    url: https://fool.azurewebsites.net/get?format=clash&region=Asia&cdn=104.16.51.111
+    url: https://fool.azurewebsites.net/get?format=clash&region=Asia&cdn=104.21.235.171
     interval: 86400
     health-check:
       enable: true
