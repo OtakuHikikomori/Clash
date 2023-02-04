@@ -16,7 +16,7 @@ proxies:
       max-early-data: 2048
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
-- name: "ID-Herza"
+- name: "ID-IKD"
   server: 104.21.235.171
   port: 443
   type: trojan
