@@ -1,6 +1,6 @@
 proxies:
 #isi akun tunnel
-- name: "VMESS-WS"
+- name: "VMESS WEEKLY"
   type: vmess
   server: 104.21.235.171
   port: 443
@@ -18,7 +18,7 @@ proxies:
       max-early-data: 2048
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
-- name: "HOWDY-WEEKLY"
+- name: "TROJAN-WEEKLY"
   server: 104.21.235.171
   port: 443
   type: trojan
@@ -47,6 +47,22 @@ proxies:
     path: /howdy
     headers:
       Host: sg1-trojan.bonds.id
+      max-early-data: 2048
+      early-data-header-name: Sec-WebSocket-Protocol
+  udp: true
+- name: "SG-HE-MUX"
+  server: 104.21.235.171
+  port: 443
+  type: trojan
+  password: cc680040-a44a-11ed-84a2-1239d0255272
+  tls: true
+  skip-cert-verify: false
+  sni: sg6-trojan.bonds.id
+  network: ws
+  ws-opts:
+    path: /howdy
+    headers:
+      Host: sg6-trojan.bonds.id
       max-early-data: 2048
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
