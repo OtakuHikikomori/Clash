@@ -54,7 +54,7 @@ proxies:
   server: 104.21.235.171
   port: 443
   type: trojan
-  password: f349fe50-a443-11ed-9afd-1239d0255272
+  password: 18534f30-a446-11ed-9ffd-1239d0255272
   tls: true
   skip-cert-verify: false
   sni: sg-2.test3.net
@@ -78,7 +78,7 @@ proxies:
   ws-opts:
     path: /howdy
     headers:
-      Host: sg-2.test3.net
+      Host: sg-3.test3.net
       max-early-data: 2048
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
