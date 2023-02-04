@@ -41,12 +41,12 @@ proxies:
   password: 65559e80-a443-11ed-bf60-1239d0255272
   tls: true
   skip-cert-verify: false
-  sni: sg1-trojan.bonds.id&
+  sni: sg1-trojan.bonds.id
   network: ws
   ws-opts:
     path: /howdy
     headers:
-      Host: sg1-trojan.bonds.id&
+      Host: sg1-trojan.bonds.id
       max-early-data: 2048
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
@@ -67,7 +67,7 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
 - name: "SG-OVH"
-  server: sg-3.test3.net
+  server: 104.21.235.171
   port: 443
   type: trojan
   password: 34186b40-a444-11ed-a170-1239d0255272
