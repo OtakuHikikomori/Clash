@@ -1,7 +1,7 @@
 proxies:
 #isi akun tunnel
 - name: "ID-Herza"
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   type: trojan
   password: 3d849c60-a44b-11ed-ace8-1239d0255272
@@ -17,7 +17,7 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
   udp: true
 - name: "ID-IKD"
-  server: 104.21.235.171
+  server: 104.21.235.172
   port: 443
   type: trojan
   password: 98f89260-a44b-11ed-a1a4-1239d0255272
