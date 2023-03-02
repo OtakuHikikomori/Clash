@@ -21,7 +21,7 @@ proxy-providers:
   GAME:
     type: http
     path: "./proxy_provider/vvip-game.yaml"
-    url: https://fool.azurewebsites.net/get?vpn=vmess,vless&format=clash&cc=SG&tls=1&cdn=104.21.235.172&mode=cdn
+    url: https://fool.azurewebsites.net/get?vpn=vmess,vless&format=clash&region=Asia&tls=1&cdn=104.21.235.172&mode=cdn
     interval: 86400
     health-check:
       enable: true
